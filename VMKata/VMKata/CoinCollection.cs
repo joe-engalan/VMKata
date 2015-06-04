@@ -13,7 +13,8 @@ namespace VMKata
         {
             get
             {
-                return Quarters * 25 + 
+                return 
+                    Quarters * 25 + 
                     Dimes * 10;
             }
         }

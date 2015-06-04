@@ -80,6 +80,9 @@ namespace VMKata
                 TemporaryDisplay = "THANK YOU";
                 CoinSlot.EmptyInto(CoinBank);
             }
+            else
+            {
+                TemporaryDisplay = "PRICE " + CreateCurrencyString(price);
             }
         }
 

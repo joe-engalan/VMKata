@@ -71,7 +71,6 @@ When the machine is not able to make change with the money in the machine for an
 
 TODO:
 
-If there isn't enough money when dispense is pressed, display the price
 After price is displayed, subsequent displays will retun to normal display behavior
 
 
@@ -103,3 +102,4 @@ After dispensing, subsequent Displays will revert to normal behavior
 Add coins to the coin bank when item is dispensed <-- My decision
 Add the concept of a saved message that is displayed once.
 Add a coin bank for making change
+If there isn't enough money when dispense is pressed, display the price

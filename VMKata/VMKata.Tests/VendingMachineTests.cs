@@ -97,5 +97,13 @@ namespace VMKata
             Assert.AreEqual("INSERT COINS", display);
         }
 
+        [Test]
+        public void Product_DisplayPriceIfDispensedWhenThereIsntEnoughMoney_DisplayWillShowPrice()
+        {
+            vm.Insert(Product.Cola, 1);
+            vm.Dispense(Product.Cola);
+            string display = vm.Display;
+            Assert.AreEqual("PRICE $1.00", display);
+        }
     }
 }

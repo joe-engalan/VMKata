@@ -72,10 +72,6 @@ When the machine is not able to make change with the money in the machine for an
 TODO:
 
 
-Put brackets on single-line ifs.
-Cleanup unused using statements.
-
-
 Done
 
 Add coins
@@ -110,3 +106,7 @@ If the display is checked again, it will display the amount of money remaining i
 If he coin bank is empty, display EXACT CHANGE ONLY instead of INSERT COINS
 Refactor ProductCollection to use a collection like a map or a set
 Refactor CoinCollection to use a collection like a map
+Put brackets on single-line ifs.
+Cleanup unused using statements.
+
+

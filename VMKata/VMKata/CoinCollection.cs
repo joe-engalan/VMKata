@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VMKata
 {
-    class CoinCollection
+    public class CoinCollection
     {
         #region Properties
         public int Value
@@ -30,7 +30,7 @@ namespace VMKata
 
         #region Methods
         // Insert a number of one type of coin into the collection
-        public void Insert(Coin coin, int num)
+        internal void Insert(Coin coin, int num)
         {
             if (coin == Coin.Quarter)
                 Quarters += num;

@@ -21,8 +21,29 @@ namespace VMKata
         [Test]
         public void AcceptCoins_QuartersAreAcceptedIntoCoinSlot_CoinSlotContainsQuarters()
         {
-            vm.CoinSlot.Insert(Coin.Quarter, 3);
+            vm.Insert(Coin.Quarter, 3);
             Assert.AreEqual(3, vm.CoinSlot.Quarters);
+        }
+
+        [Test]
+        public void AcceptCoins_DimesAreAcceptedInCoinSlot_CoinSlotContainsDimes()
+        {
+            vm.Insert(Coin.Dime, 1);
+            Assert.AreEqual(1, vm.CoinSlot.Dimes);
+        }
+
+        [Test]
+        public void AcceptCoins_NickelsAreAcceptedInCoinSlot_CoinSlotContainsNickels()
+        {
+            vm.Insert(Coin.Nickel, 10);
+            Assert.AreEqual(10, vm.CoinSlot.Nickels);
+        }
+
+        [Test]
+        public void AcceptCoins_PenniesAreRejectedInCoinSlot_CoinReturnContainsPennies()
+        {
+            vm.Insert(Coin.Penny, 1);
+            Assert.AreEqual(1, vm.CoinReturn.Pennies);
         }
     }
 }

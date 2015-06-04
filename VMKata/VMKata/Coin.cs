@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VMKata
 {
-    enum Coin
+    public enum Coin
     {
         Unknown,
         Penny,

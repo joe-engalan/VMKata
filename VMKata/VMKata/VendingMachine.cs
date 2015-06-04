@@ -13,6 +13,7 @@ namespace VMKata
         {
             CoinSlot = new CoinCollection();
             CoinReturn = new CoinCollection();
+            CoinBank = new CoinCollection();
             Inventory = new ProductCollection();
         }
         #endregion
@@ -20,6 +21,7 @@ namespace VMKata
         #region Properties
         public CoinCollection CoinSlot { get; private set; }
         public CoinCollection CoinReturn { get; private set; }
+        public CoinCollection CoinBank { get; private set; }
         public ProductCollection Inventory { get; private set; }
         public string Display 
         { 
@@ -40,7 +42,9 @@ namespace VMKata
                     display = "INSERT COINS";
                 }
                 else
-                    return string.Format("{0:C}", CoinSlot.Value / 100.0);
+                {
+                    display = CreateCurrencyString(CoinSlot.Value);
+                }
 
                 return display;
             }
@@ -74,6 +78,8 @@ namespace VMKata
             {
                 Inventory.Dispense(product);
                 TemporaryDisplay = "THANK YOU";
+                CoinSlot.EmptyInto(CoinBank);
+            }
             }
         }
 
@@ -94,6 +100,13 @@ namespace VMKata
             }
 
             return price;
+        }
+        #endregion
+
+        #region Utility
+        private string CreateCurrencyString(int amount)
+        {
+            return string.Format("{0:C}", amount / 100.0);
         }
         #endregion
     }

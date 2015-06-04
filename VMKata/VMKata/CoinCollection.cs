@@ -42,6 +42,20 @@ namespace VMKata
                 Pennies += num;
         }
 
+        internal void EmptyInto(CoinCollection collection)
+        {
+            collection.Quarters += Quarters;
+            Quarters = 0;
+
+            collection.Dimes += Dimes;
+            Dimes = 0;
+
+            collection.Nickels += Nickels;
+            Nickels = 0;
+
+            collection.Pennies += Pennies;
+            Pennies = 0;
+        }
         #endregion
     }
 }

@@ -62,6 +62,15 @@ namespace VMKata
             Assert.AreEqual(40, vm.CoinSlot.Value);
         }
 
+        [Test]
+        public void Coin_EmptyingIntoAnotherCollectionAddsCoinsToTheOtherCollection_OtherCollectionHasMoreCoins()
+        {
+            vm.Insert(Product.Chips, 1);
+            vm.Insert(Coin.Quarter, 2);
+            vm.Dispense(Product.Chips);
+            Assert.AreEqual(2, vm.CoinBank.Quarters);
+        }
+
 
     }
 }

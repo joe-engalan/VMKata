@@ -71,11 +71,10 @@ When the machine is not able to make change with the money in the machine for an
 
 TODO:
 
-Add coins to the coin bank when item is dispensed <-- My decision
 If there isn't enough money when dispense is pressed, display the price
 After price is displayed, subsequent displays will retun to normal display behavior
-Add the concept of a saved message that is displayed once.
-Add a coin bank for making change
+
+
 Refactor CoinCollection to use a collection like a map?
 Put brackets on single-line ifs.
 Refactor ProductCollection to use a collection like a map or a set?
@@ -101,3 +100,6 @@ Dispense product if in stock
 Dispense product if there is enough money
 Display THANK YOU when products are dispensed
 After dispensing, subsequent Displays will revert to normal behavior
+Add coins to the coin bank when item is dispensed <-- My decision
+Add the concept of a saved message that is displayed once.
+Add a coin bank for making change

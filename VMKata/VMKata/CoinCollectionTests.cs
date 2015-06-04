@@ -45,5 +45,23 @@ namespace VMKata
             cc.Insert(Coin.Penny, 1);
             Assert.AreEqual(1, cc.Value);
         }
+
+        [Test]
+        public void Coin_StartsEmpty_ValueIs0()
+        {
+            Assert.AreEqual(0, cc.Value);
+        }
+
+        [Test]
+        public void Coin_AddingCoinsAccumulatesValue_OneOfEachCoinIs41()
+        {
+            cc.Insert(Coin.Quarter, 1);
+            cc.Insert(Coin.Nickel, 1);
+            cc.Insert(Coin.Dime, 1);
+            cc.Insert(Coin.Penny, 1);
+            Assert.AreEqual(41, cc.Value);
+        }
+
+
     }
 }

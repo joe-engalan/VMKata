@@ -63,8 +63,17 @@ namespace VMKata
         public void Product_DispenseInStockItem_ItemCountIsDecreasedWhenDispensed()
         {
             vm.Insert(Product.Cola, 2);
+            vm.Insert(Coin.Quarter, 4);
             vm.Dispense(Product.Cola);
             Assert.AreEqual(1, vm.Inventory.Colas);
+        }
+
+        [Test]
+        public void Product_DoNotDispenseIfThereIsntEnoughMoney_ItemCountDoesntDecreaseIfNotEnoughMoney()
+        {
+            vm.Insert(Product.Candy, 1);
+            vm.Dispense(Product.Candy);
+            Assert.AreEqual(1, vm.Inventory.Candies);
         }
     }
 }

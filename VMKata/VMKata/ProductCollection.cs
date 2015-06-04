@@ -18,13 +18,33 @@ namespace VMKata
         internal void Insert(Product product, int num)
         {
             if (product == Product.Cola)
+            {
                 Colas += num;
+            }
+            else if (product == Product.Candy)
+            {
+                Candies += num;
+            }
+            else if (product == Product.Chips)
+            {
+                Chips += num;
+            }
         }
 
         internal void Dispense(Product product)
         {
             if (product == Product.Cola)
+            {
                 Colas--;
+            }
+            else if (product == Product.Candy)
+            {
+                Candies--;
+            }
+            else if (product == Product.Chips)
+            {
+                Chips--;
+            }
         }
         #endregion
     }

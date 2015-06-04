@@ -51,7 +51,10 @@ namespace VMKata
 
         public void Dispense(Product product)
         {
-            Inventory.Dispense(product);
+            if(CoinSlot.Value >= GetPrice(product))
+            {
+                Inventory.Dispense(product);
+            }
         }
 
         public int GetPrice(Product product)

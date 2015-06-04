@@ -71,7 +71,6 @@ When the machine is not able to make change with the money in the machine for an
 
 TODO:
 
-Dispense product if in stock
 Dispense product if there is enough money
 Display THANK YOU when products are dispensed
 After dispensing, subsequent Displays will revert to normal behavior
@@ -101,3 +100,4 @@ The Display will show INSERT COINS when the coin slot is empty
 The Display will show the value of the coins in the coin slot if not empty
 Add products
 Validate product pricing
+Dispense product if in stock

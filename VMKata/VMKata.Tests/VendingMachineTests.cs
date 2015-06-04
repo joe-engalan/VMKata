@@ -116,5 +116,17 @@ namespace VMKata
             display = vm.Display;
             Assert.AreEqual("$0.50", display);
         }
+
+        [Test]
+        public void MakeChange_BalanceDueAfterPurchase_DimeIsPlacedInCoinReturn()
+        {
+            vm.AddToBank(Coin.Dime, 1);
+            vm.Insert(Product.Candy, 1);
+            vm.Insert(Coin.Quarter, 3);
+            vm.Dispense(Product.Candy);
+
+            Assert.AreEqual(1, vm.CoinReturn.Dimes);
+
+        }
     }
 }

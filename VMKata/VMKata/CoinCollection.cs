@@ -56,6 +56,39 @@ namespace VMKata
             collection.Pennies += Pennies;
             Pennies = 0;
         }
+
+        internal void DispenseInto(CoinCollection collection, int amount)
+        {
+            // Use a cascading subtraction system, like you're taught in 
+            // retail for counting change.
+            while(amount >= 25 && Quarters > 0)
+            {
+                collection.Quarters++;
+                Quarters--;
+                amount -= 25;
+            }
+
+            while(amount >= 10 && Dimes > 0)
+            {
+                collection.Dimes++;
+                Dimes--;
+                amount -= 10;
+            }
+
+            while(amount >= 5 && Nickels > 0)
+            {
+                collection.Nickels++;
+                Nickels--;
+                amount -= 5;
+            }
+
+            while(amount >= 1 && Pennies > 0)
+            {
+                collection.Pennies++;
+                Pennies--;
+                amount -= 1;
+            }
+        }
         #endregion
     }
 }

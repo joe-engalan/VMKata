@@ -71,8 +71,9 @@ When the machine is not able to make change with the money in the machine for an
 
 TODO:
 
-After price is displayed, subsequent displays will retun to normal display behavior
-
+When the return coins is selected, the money the customer has placed in the machine is returned
+Empty the coin slot into the coin bin when returning coins
+and the display shows INSERT COIN.
 
 Refactor CoinCollection to use a collection like a map?
 Put brackets on single-line ifs.
@@ -103,3 +104,5 @@ Add coins to the coin bank when item is dispensed <-- My decision
 Add the concept of a saved message that is displayed once.
 Add a coin bank for making change
 If there isn't enough money when dispense is pressed, display the price
+After price is displayed, subsequent displays will retun to normal display behavior
+then the remaining amount is placed in the coin return.

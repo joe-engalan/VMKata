@@ -71,6 +71,11 @@ namespace VMKata
             Inventory.Insert(product, num);
         }
 
+        public void AddToBank(Coin coin, int num)
+        {
+            CoinBank.Insert(coin, num);
+        }
+
         public void Dispense(Product product)
         {
             int price = GetPrice(product);
@@ -78,6 +83,16 @@ namespace VMKata
             {
                 Inventory.Dispense(product);
                 TemporaryDisplay = "THANK YOU";
+
+                int changeDue = CoinSlot.Value - price;
+                if(changeDue > 0)
+                {
+                    // Put the change in the coin return.
+                    // Change comes from the coin bank before
+                    // the coinslot is dumped into the coin bank.
+                    CoinBank.DispenseInto(CoinReturn, changeDue);
+                }
+
                 CoinSlot.EmptyInto(CoinBank);
             }
             else

@@ -39,5 +39,11 @@ namespace VMKata
             Assert.AreEqual(5, cc.Value);
         }
 
+        [Test]
+        public void Coin_InsertPenny_ValueBecomes1()
+        {
+            cc.Insert(Coin.Penny, 1);
+            Assert.AreEqual(1, cc.Value);
+        }
     }
 }

@@ -16,13 +16,15 @@ namespace VMKata
                 return 
                     Quarters * 25 + 
                     Dimes * 10 +
-                    Nickels * 5;
+                    Nickels * 5 +
+                    Pennies;
             }
         }
 
         public int Quarters { get; private set; }
         public int Dimes { get; private set; }
         public int Nickels { get; private set; }
+        public int Pennies { get; private set; }
 
         #endregion
 
@@ -36,6 +38,8 @@ namespace VMKata
                 Dimes += num;
             else if (coin == Coin.Nickel)
                 Nickels += num;
+            else if (coin == Coin.Penny)
+                Pennies += num;
         }
 
         #endregion

@@ -135,5 +135,14 @@ namespace VMKata
             vm.ReturnCoins();
             Assert.AreEqual(4, vm.CoinReturn.Quarters);
         }
+
+        [Test]
+        public void ReturnCoins_CoinSlotEmptied_DisplayShowsInserCoins()
+        {
+            vm.Insert(Coin.Quarter, 4);
+            vm.ReturnCoins();
+            string display = vm.Display;
+            Assert.AreEqual("INSERT COINS", display);
+        }
     }
 }

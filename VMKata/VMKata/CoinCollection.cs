@@ -13,6 +13,8 @@ namespace VMKata
         #endregion
 
         #region Properties
+
+        // Value represents the total amount of money in the collection.
         public int Value
         {
             get
@@ -43,14 +45,18 @@ namespace VMKata
             }
         }
 
+        // Remove a number of one type of coin.
         private void Remove(Coin coin, int num)
         {
             if(Coins.ContainsKey(coin))
             {
-                Coins[coin] -= num;
+                Coins[coin] -= Math.Min(num, Coins[coin]);
             }
         }
 
+        // Empty this collection into nothe collection as if
+        // you were pouring one bucket of coins into another bucket
+        // of coins.
         internal void EmptyInto(CoinCollection collection)
         {
             foreach(var kvp in Coins)
@@ -60,6 +66,10 @@ namespace VMKata
             Coins.Clear();
         }
 
+        // Dispense coins up to the amount requested. 
+        // No checks are made to see if the amount requested is met.
+        // The algorithm will use as few coins as possible by dispensing
+        // the larger denominations before smaller denominations.
         internal void DispenseInto(CoinCollection collection, int amount)
         {
             // Use a cascading subtraction system, like you're taught in 
@@ -115,6 +125,8 @@ namespace VMKata
             return value;
         }
 
+        // Dispense as many of one coin as available or maximum number of coins needed
+        // without exceeding the amount limit.
         private int DispenseCoinInto(CoinCollection collection, Coin coin, int amount)
         {
             int numDispensed = Math.Min(amount / CoinValue(coin), Count(coin));

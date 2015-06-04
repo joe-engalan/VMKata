@@ -49,6 +49,7 @@ namespace VMKata
         [Test]
         public void AcceptCoins_DisplayMessageWhenCoinSlotIsEmpty_INSERTCOINSIsDisplayed()
         {
+            vm.AddToBank(Coin.Quarter, 1);
             Assert.AreEqual("INSERT COINS", vm.Display);
         }
 
@@ -137,8 +138,9 @@ namespace VMKata
         }
 
         [Test]
-        public void ReturnCoins_CoinSlotEmptied_DisplayShowsInserCoins()
+        public void ReturnCoins_CoinSlotEmptied_DisplayShowsInsertCoins()
         {
+            vm.AddToBank(Coin.Dime, 1);
             vm.Insert(Coin.Quarter, 4);
             vm.ReturnCoins();
             string display = vm.Display;
@@ -161,6 +163,13 @@ namespace VMKata
             string display = vm.Display; // SOLD OUT
             display = vm.Display;
             Assert.AreEqual("$0.50", display);
+        }
+
+        [Test]
+        public void ExactChangeOnly_HasNoMoneyToMakeChange_DisplayExactChangeOnly()
+        {
+            string display = vm.Display;
+            Assert.AreEqual("EXACT CHANGE ONLY", display);
         }
     }
 }

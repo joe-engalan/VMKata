@@ -39,7 +39,14 @@ namespace VMKata
                 }
                 else if(CoinSlot.Value == 0)
                 {
-                    display = "INSERT COINS";
+                    if(CoinBank.Value == 0)
+                    {
+                        display = "EXACT CHANGE ONLY";
+                    }
+                    else
+                    {
+                        display = "INSERT COINS";
+                    }
                 }
                 else
                 {

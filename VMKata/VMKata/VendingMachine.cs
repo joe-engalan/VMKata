@@ -44,7 +44,17 @@ namespace VMKata
 
         public int GetPrice(Product product)
         {
-            return 100;
+            int price = 0;
+            if (product == Product.Cola)
+            {
+                price = 100;
+            }
+            else if(product == Product.Chips)
+            {
+                price = 50;
+            }
+
+            return price;
         }
         #endregion
     }

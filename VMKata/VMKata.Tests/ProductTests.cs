@@ -23,5 +23,11 @@ namespace VMKata.Tests
         {
             Assert.AreEqual(100, vm.GetPrice(Product.Cola));  
         }
+
+        [Test]
+        public void Product_ValidChipsCost_ChipsCost50()
+        {
+            Assert.AreEqual(50, vm.GetPrice(Product.Chips));
+        }
     }
 }

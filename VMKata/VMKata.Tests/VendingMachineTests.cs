@@ -51,5 +51,12 @@ namespace VMKata
         {
             Assert.AreEqual("INSERT COINS", vm.Display);
         }
+
+        [Test]
+        public void AcceptCoins_DisplayValueWhenCoinSlotIsNotEmpty_Display25CentsWhenQuarterIsInserted()
+        {
+            vm.Insert(Coin.Quarter, 1);
+            Assert.AreEqual("$0.25", vm.Display);
+        }
     }
 }

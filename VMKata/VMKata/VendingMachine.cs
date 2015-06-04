@@ -24,7 +24,10 @@ namespace VMKata
         { 
             get
             {
-                return "INSERT COINS";
+                if(CoinSlot.Value == 0)
+                    return "INSERT COINS";
+                else
+                    return string.Format("{0:C}", CoinSlot.Value / 100.0);
             }
         }
 

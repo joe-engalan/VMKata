@@ -152,5 +152,15 @@ namespace VMKata
             string display = vm.Display;
             Assert.AreEqual("SOLD OUT", display);
         }
+
+        [Test]
+        public void SoldOut_DisplayWillReturnToPreviousBehaviorAfterSoldOutIsDisplayed_DisplayWillShowAmountInCoinSlot()
+        {
+            vm.Insert(Coin.Nickel, 10);
+            vm.Dispense(Product.Cola);
+            string display = vm.Display; // SOLD OUT
+            display = vm.Display;
+            Assert.AreEqual("$0.50", display);
+        }
     }
 }

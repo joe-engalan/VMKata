@@ -74,7 +74,7 @@ TODO:
 
 Refactor CoinCollection to use a collection like a map?
 Put brackets on single-line ifs.
-Refactor ProductCollection to use a collection like a map or a set?
+Cleanup unused using statements.
 
 
 Done
@@ -109,3 +109,4 @@ and the display shows INSERT COIN.
 When the item selected by the customer is out of stock, the machine displays SOLD OUT. 
 If the display is checked again, it will display the amount of money remaining in the machine or INSERT COIN if there is no money in the machine.
 If he coin bank is empty, display EXACT CHANGE ONLY instead of INSERT COINS
+Refactor ProductCollection to use a collection like a map or a set

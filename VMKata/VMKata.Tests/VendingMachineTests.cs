@@ -66,7 +66,7 @@ namespace VMKata
             vm.Insert(Product.Cola, 2);
             vm.Insert(Coin.Quarter, 4);
             vm.Dispense(Product.Cola);
-            Assert.AreEqual(1, vm.Inventory.Colas);
+            Assert.AreEqual(1, vm.Inventory.Count(Product.Cola));
         }
 
         [Test]
@@ -74,7 +74,7 @@ namespace VMKata
         {
             vm.Insert(Product.Candy, 1);
             vm.Dispense(Product.Candy);
-            Assert.AreEqual(1, vm.Inventory.Candies);
+            Assert.AreEqual(1, vm.Inventory.Count(Product.Candy));
         }
 
         [Test]

@@ -9,59 +9,46 @@ namespace VMKata
     public class ProductCollection
     {
         #region Properties
-        public int Colas { get; private set; }
-        public int Candies { get; private set; }
-        public int Chips { get; private set; }
+        private Dictionary<Product, int> Products { get; set; }
+        #endregion
+
+        #region Constructor
+        public ProductCollection()
+        {
+            Products = new Dictionary<Product, int>();
+        }
         #endregion
 
         #region Methods
         internal void Insert(Product product, int num)
         {
-            if (product == Product.Cola)
+            if(Products.ContainsKey(product))
             {
-                Colas += num;
+                Products[product] += num;
             }
-            else if (product == Product.Candy)
+            else
             {
-                Candies += num;
-            }
-            else if (product == Product.Chips)
-            {
-                Chips += num;
+                Products.Add(product, num);
             }
         }
 
         internal void Dispense(Product product)
         {
-            if (product == Product.Cola)
+            int count = Count(product);
+            if(count > 0)
             {
-                Colas--;
-            }
-            else if (product == Product.Candy)
-            {
-                Candies--;
-            }
-            else if (product == Product.Chips)
-            {
-                Chips--;
+                Products[product] = count - 1;
             }
         }
 
         public int Count(Product product)
         {
             int count = 0;
-            if (product == Product.Cola)
+            if(Products.ContainsKey(product))
             {
-                count = Colas;
+                count = Products[product];
             }
-            else if (product == Product.Candy)
-            {
-                count = Candies;
-            }
-            else if (product == Product.Chips)
-            {
-                count = Chips;
-            }
+
             return count;
         }
         #endregion

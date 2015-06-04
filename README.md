@@ -76,6 +76,7 @@ Reject invalid coins
 Valid coins go into the coin slot
 Invalid coins go into the coin return
 Coin types shouldn't know their value
+Refactor CoinCollection to use a collection like a map?
 
 
 Done

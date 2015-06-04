@@ -13,9 +13,13 @@ namespace VMKata
         {
             get
             {
-                return 25;
+                return Quarters * 25 + 
+                    Dimes * 10;
             }
         }
+
+        public int Quarters { get; private set; }
+        public int Dimes { get; private set; }
 
         #endregion
 
@@ -23,6 +27,10 @@ namespace VMKata
         // Insert a number of one type of coin into the collection
         public void Insert(Coin coin, int num)
         {
+            if (coin == Coin.Quarter)
+                Quarters += num;
+            else if (coin == Coin.Dime)
+                Dimes += num;
         }
 
         #endregion

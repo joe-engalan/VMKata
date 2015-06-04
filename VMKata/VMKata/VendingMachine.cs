@@ -8,18 +8,19 @@ namespace VMKata
 {
     public class VendingMachine
     {
-
         #region Constructor
         public VendingMachine()
         {
             CoinSlot = new CoinCollection();
             CoinReturn = new CoinCollection();
+            Inventory = new ProductCollection();
         }
         #endregion
 
         #region Properties
         public CoinCollection CoinSlot { get; private set; }
         public CoinCollection CoinReturn { get; private set; }
+        public ProductCollection Inventory { get; private set; }
         public string Display 
         { 
             get
@@ -31,6 +32,7 @@ namespace VMKata
             }
         }
 
+
         #endregion
 
         #region Methods
@@ -40,6 +42,16 @@ namespace VMKata
                 CoinReturn.Insert(coin, num);
             else
                 CoinSlot.Insert(coin, num);
+        }
+
+        public void Insert(Product product, int num)
+        {
+            Inventory.Insert(product, num);
+        }
+
+        public void Dispense(Product product)
+        {
+            Inventory.Dispense(product);
         }
 
         public int GetPrice(Product product)

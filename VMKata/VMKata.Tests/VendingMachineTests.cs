@@ -58,5 +58,13 @@ namespace VMKata
             vm.Insert(Coin.Quarter, 1);
             Assert.AreEqual("$0.25", vm.Display);
         }
+
+        [Test]
+        public void Product_DispenseInStockItem_ItemCountIsDecreasedWhenDispensed()
+        {
+            vm.Insert(Product.Cola, 2);
+            vm.Dispense(Product.Cola);
+            Assert.AreEqual(1, vm.Inventory.Colas);
+        }
     }
 }

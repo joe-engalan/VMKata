@@ -71,8 +71,7 @@ When the machine is not able to make change with the money in the machine for an
 
 TODO:
 
-Add products
-Validate product pricing
+Dispense product if in stock
 Dispense product if there is enough money
 Display THANK YOU when products are dispensed
 After dispensing, subsequent Displays will revert to normal behavior
@@ -83,6 +82,7 @@ Add the concept of a saved message that is displayed once.
 Add a coin bank for making change
 Refactor CoinCollection to use a collection like a map?
 Put brackets on single-line ifs.
+Refactor ProductCollection to use a collection like a map or a set?
 
 
 Done
@@ -99,3 +99,5 @@ Invalid coins go into the coin return
 Add a Display
 The Display will show INSERT COINS when the coin slot is empty
 The Display will show the value of the coins in the coin slot if not empty
+Add products
+Validate product pricing

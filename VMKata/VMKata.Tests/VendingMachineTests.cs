@@ -22,28 +22,28 @@ namespace VMKata
         public void AcceptCoins_QuartersAreAcceptedIntoCoinSlot_CoinSlotContainsQuarters()
         {
             vm.Insert(Coin.Quarter, 3);
-            Assert.AreEqual(3, vm.CoinSlot.Quarters);
+            Assert.AreEqual(3, vm.CoinSlot.Count(Coin.Quarter));
         }
 
         [Test]
         public void AcceptCoins_DimesAreAcceptedInCoinSlot_CoinSlotContainsDimes()
         {
             vm.Insert(Coin.Dime, 1);
-            Assert.AreEqual(1, vm.CoinSlot.Dimes);
+            Assert.AreEqual(1, vm.CoinSlot.Count(Coin.Dime));
         }
 
         [Test]
         public void AcceptCoins_NickelsAreAcceptedInCoinSlot_CoinSlotContainsNickels()
         {
             vm.Insert(Coin.Nickel, 10);
-            Assert.AreEqual(10, vm.CoinSlot.Nickels);
+            Assert.AreEqual(10, vm.CoinSlot.Count(Coin.Nickel));
         }
 
         [Test]
         public void AcceptCoins_PenniesAreRejectedInCoinSlot_CoinReturnContainsPennies()
         {
             vm.Insert(Coin.Penny, 1);
-            Assert.AreEqual(1, vm.CoinReturn.Pennies);
+            Assert.AreEqual(1, vm.CoinReturn.Count(Coin.Penny));
         }
 
         [Test]
@@ -126,7 +126,7 @@ namespace VMKata
             vm.Insert(Coin.Quarter, 3);
             vm.Dispense(Product.Candy);
 
-            Assert.AreEqual(1, vm.CoinReturn.Dimes);
+            Assert.AreEqual(1, vm.CoinReturn.Count(Coin.Dime));
         }
 
         [Test]
@@ -134,7 +134,7 @@ namespace VMKata
         {
             vm.Insert(Coin.Quarter, 4);
             vm.ReturnCoins();
-            Assert.AreEqual(4, vm.CoinReturn.Quarters);
+            Assert.AreEqual(4, vm.CoinReturn.Count(Coin.Quarter));
         }
 
         [Test]

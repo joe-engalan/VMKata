@@ -1,0 +1,2 @@
+# VMKata
+Vending Machine Kata

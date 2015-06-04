@@ -29,7 +29,11 @@ namespace VMKata
 
                 if (!string.IsNullOrEmpty(TemporaryDisplay))
                 {
+                    // The temporary display is only displayed
+                    // once. After it has been seen, displays 
+                    // revert to their normal behavior.
                     display = TemporaryDisplay;
+                    TemporaryDisplay = string.Empty;
                 }
                 else if(CoinSlot.Value == 0)
                 {

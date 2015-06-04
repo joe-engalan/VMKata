@@ -71,7 +71,6 @@ When the machine is not able to make change with the money in the machine for an
 
 TODO:
 
-After dispensing, subsequent Displays will revert to normal behavior
 Add coins to the coin bank when item is dispensed <-- My decision
 If there isn't enough money when dispense is pressed, display the price
 After price is displayed, subsequent displays will retun to normal display behavior
@@ -101,3 +100,4 @@ Validate product pricing
 Dispense product if in stock
 Dispense product if there is enough money
 Display THANK YOU when products are dispensed
+After dispensing, subsequent Displays will revert to normal behavior

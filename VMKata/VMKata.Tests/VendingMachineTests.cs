@@ -86,5 +86,16 @@ namespace VMKata
             Assert.AreEqual("THANK YOU", display);
         }
 
+        [Test]
+        public void Product_DisplayReturnsToPreviousBehaviorAfterThankYouIsSeen_DisplayWillShowInsertCoinsAfterThankYou()
+        {
+            vm.Insert(Product.Chips, 1);
+            vm.Insert(Coin.Quarter, 2);
+            vm.Dispense(Product.Chips);
+            string display = vm.Display;
+            display = vm.Display;
+            Assert.AreEqual("INSERT COINS", display);
+        }
+
     }
 }

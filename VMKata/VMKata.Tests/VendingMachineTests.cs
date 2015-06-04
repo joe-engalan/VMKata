@@ -126,7 +126,14 @@ namespace VMKata
             vm.Dispense(Product.Candy);
 
             Assert.AreEqual(1, vm.CoinReturn.Dimes);
+        }
 
+        [Test]
+        public void ReturnCoins_ReturnCoinsIsSelected_ContentsOfCoinSlotEmptyIntoCoinReturn()
+        {
+            vm.Insert(Coin.Quarter, 4);
+            vm.ReturnCoins();
+            Assert.AreEqual(4, vm.CoinReturn.Quarters);
         }
     }
 }

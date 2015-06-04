@@ -101,6 +101,11 @@ namespace VMKata
             }
         }
 
+        public void ReturnCoins()
+        {
+            CoinSlot.EmptyInto(CoinReturn);
+        }
+
         public int GetPrice(Product product)
         {
             int price = 0;

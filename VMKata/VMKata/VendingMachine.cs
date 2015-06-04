@@ -68,9 +68,13 @@ namespace VMKata
         public void Insert(Coin coin, int num)
         {
             if (coin == Coin.Penny)
+            {
                 CoinReturn.Insert(coin, num);
+            }
             else
+            {
                 CoinSlot.Insert(coin, num);
+            }
         }
 
         public void Insert(Product product, int num)

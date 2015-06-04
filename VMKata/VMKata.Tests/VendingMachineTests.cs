@@ -105,5 +105,16 @@ namespace VMKata
             string display = vm.Display;
             Assert.AreEqual("PRICE $1.00", display);
         }
+
+        [Test]
+        public void Product_DisplayReturnsToPreviousBehaviorAfterPriceIsDisplayed_DisplayWillShowAmountInCoinSlotAfterPrice()
+        {
+            vm.Insert(Product.Cola, 1);
+            vm.Insert(Coin.Quarter, 2);
+            vm.Dispense(Product.Cola);
+            string display = vm.Display;
+            display = vm.Display;
+            Assert.AreEqual("$0.50", display);
+        }
     }
 }

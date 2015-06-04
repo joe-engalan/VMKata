@@ -41,6 +41,11 @@ namespace VMKata
             else
                 CoinSlot.Insert(coin, num);
         }
+
+        public int GetPrice(Product product)
+        {
+            return 100;
+        }
         #endregion
     }
 }

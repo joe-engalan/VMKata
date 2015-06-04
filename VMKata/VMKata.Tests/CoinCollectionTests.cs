@@ -10,56 +10,56 @@ namespace VMKata
     [TestFixture]
     class CoinCollectionTests
     {
-        CoinCollection cc;
+        VendingMachine vm;
 
         [SetUp]
         public void Init()
         {
-            cc = new CoinCollection();
+            vm = new VendingMachine();
         }
 
         [Test]
         public void Coin_InsertQuarter_ValueBecomes25()
         {
-            cc.Insert(Coin.Quarter, 1);
-            Assert.AreEqual(25, cc.Value);
+            vm.Insert(Coin.Quarter, 1);
+            Assert.AreEqual(25, vm.CoinSlot.Value);
         }
 
         [Test]
         public void Coin_InsertDime_ValueBecomes10()
         {
-            cc.Insert(Coin.Dime, 1);
-            Assert.AreEqual(10, cc.Value);
+            vm.Insert(Coin.Dime, 1);
+            Assert.AreEqual(10, vm.CoinSlot.Value);
         }
 
         [Test]
         public void Coin_InsertNickel_ValueBecomes5()
         {
-            cc.Insert(Coin.Nickel, 1);
-            Assert.AreEqual(5, cc.Value);
+            vm.Insert(Coin.Nickel, 1);
+            Assert.AreEqual(5, vm.CoinSlot.Value);
         }
 
         [Test]
         public void Coin_InsertPenny_ValueBecomes1()
         {
-            cc.Insert(Coin.Penny, 1);
-            Assert.AreEqual(1, cc.Value);
+            vm.Insert(Coin.Penny, 1);
+            Assert.AreEqual(1, vm.CoinReturn.Value);
         }
 
         [Test]
         public void Coin_StartsEmpty_ValueIs0()
         {
-            Assert.AreEqual(0, cc.Value);
+            Assert.AreEqual(0, vm.CoinSlot.Value);
         }
 
         [Test]
-        public void Coin_AddingCoinsAccumulatesValue_OneOfEachCoinIs41()
+        public void Coin_AddingCoinsAccumulatesValue_OneOfEachCoinIs40()
         {
-            cc.Insert(Coin.Quarter, 1);
-            cc.Insert(Coin.Nickel, 1);
-            cc.Insert(Coin.Dime, 1);
-            cc.Insert(Coin.Penny, 1);
-            Assert.AreEqual(41, cc.Value);
+            vm.Insert(Coin.Quarter, 1);
+            vm.Insert(Coin.Nickel, 1);
+            vm.Insert(Coin.Dime, 1);
+            vm.Insert(Coin.Penny, 1);
+            Assert.AreEqual(40, vm.CoinSlot.Value);
         }
 
 

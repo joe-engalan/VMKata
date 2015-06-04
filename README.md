@@ -65,14 +65,11 @@ When the machine is not able to make change with the money in the machine for an
 
 TODO:
 
+Add a Display
+The Display will show INSERT COINS when the coin slot is empty
+The Display will show the value of the coins in the coin slot if not empty
 Add products
 Add a coin bank for making change
--- Add a coin slot for accepting coins
-Add a coin return for rejected coins and returned coins
--- Accept valid coins
-Reject invalid coins
-Valid coins go into the coin slot
-Invalid coins go into the coin return
 Refactor CoinCollection to use a collection like a map?
 
 
@@ -81,3 +78,9 @@ Done
 Add coins
 Keep track of coins
 Coin types shouldn't know their value
+Add a coin slot for accepting coins
+Accept valid coins
+Reject invalid coins
+Add a coin return for rejected coins and returned coins
+Valid coins go into the coin slot
+Invalid coins go into the coin return

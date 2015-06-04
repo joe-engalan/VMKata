@@ -66,18 +66,18 @@ When the machine is not able to make change with the money in the machine for an
 TODO:
 
 Add products
-- Add coins
-Keep track of coins
 Add a coin bank for making change
-Add a coin slot for accepting coins
+-- Add a coin slot for accepting coins
 Add a coin return for rejected coins and returned coins
-Accept valid coins
+-- Accept valid coins
 Reject invalid coins
 Valid coins go into the coin slot
 Invalid coins go into the coin return
-Coin types shouldn't know their value
 Refactor CoinCollection to use a collection like a map?
 
 
 Done
 
+Add coins
+Keep track of coins
+Coin types shouldn't know their value

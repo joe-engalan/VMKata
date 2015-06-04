@@ -71,6 +71,8 @@ When the machine is not able to make change with the money in the machine for an
 
 TODO:
 
+If the display is checked again, it will display the amount of money remaining in the machine or INSERT COIN if there is no money in the machine.
+
 
 Refactor CoinCollection to use a collection like a map?
 Put brackets on single-line ifs.
@@ -106,3 +108,4 @@ then the remaining amount is placed in the coin return.
 When the return coins is selected, the money the customer has placed in the machine is returned
 Empty the coin slot into the coin bin when returning coins
 and the display shows INSERT COIN.
+When the item selected by the customer is out of stock, the machine displays SOLD OUT. 

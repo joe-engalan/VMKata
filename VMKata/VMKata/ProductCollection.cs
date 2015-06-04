@@ -46,6 +46,24 @@ namespace VMKata
                 Chips--;
             }
         }
+
+        public int Count(Product product)
+        {
+            int count = 0;
+            if (product == Product.Cola)
+            {
+                count = Colas;
+            }
+            else if (product == Product.Candy)
+            {
+                count = Candies;
+            }
+            else if (product == Product.Chips)
+            {
+                count = Chips;
+            }
+            return count;
+        }
         #endregion
     }
 }

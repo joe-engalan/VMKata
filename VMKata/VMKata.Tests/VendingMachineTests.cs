@@ -144,5 +144,13 @@ namespace VMKata
             string display = vm.Display;
             Assert.AreEqual("INSERT COINS", display);
         }
+
+        [Test]
+        public void SoldOut_ItemIsNotInStockWhenDispensed_DisplayWillReadSoldOut()
+        {
+            vm.Dispense(Product.Candy);
+            string display = vm.Display;
+            Assert.AreEqual("SOLD OUT", display);
+        }
     }
 }

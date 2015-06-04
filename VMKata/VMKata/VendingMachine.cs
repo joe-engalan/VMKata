@@ -79,7 +79,12 @@ namespace VMKata
         public void Dispense(Product product)
         {
             int price = GetPrice(product);
-            if(CoinSlot.Value >= price)
+
+            if(Inventory.Count(product) == 0)
+            {
+                TemporaryDisplay = "SOLD OUT";
+            }
+            else if(CoinSlot.Value >= price)
             {
                 Inventory.Dispense(product);
                 TemporaryDisplay = "THANK YOU";

@@ -75,5 +75,16 @@ namespace VMKata
             vm.Dispense(Product.Candy);
             Assert.AreEqual(1, vm.Inventory.Candies);
         }
+
+        [Test]
+        public void Product_DisplayTHANKYOUAfterDispensingItem_DisplayWillReadTHANKYOU()
+        {
+            vm.Insert(Product.Chips, 1);
+            vm.Insert(Coin.Quarter, 5);
+            vm.Dispense(Product.Chips);
+            string display = vm.Display;
+            Assert.AreEqual("THANK YOU", display);
+        }
+
     }
 }

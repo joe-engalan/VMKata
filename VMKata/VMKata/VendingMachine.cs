@@ -25,12 +25,26 @@ namespace VMKata
         { 
             get
             {
-                if(CoinSlot.Value == 0)
-                    return "INSERT COINS";
+                string display;
+
+                if (!string.IsNullOrEmpty(TemporaryDisplay))
+                {
+                    display = TemporaryDisplay;
+                }
+                else if(CoinSlot.Value == 0)
+                {
+                    display = "INSERT COINS";
+                }
                 else
                     return string.Format("{0:C}", CoinSlot.Value / 100.0);
+
+                return display;
             }
         }
+
+        // Placeholder for an explicit status string that has
+        // to be displayed.
+        private string TemporaryDisplay { get; set; }
 
 
         #endregion
@@ -51,9 +65,11 @@ namespace VMKata
 
         public void Dispense(Product product)
         {
-            if(CoinSlot.Value >= GetPrice(product))
+            int price = GetPrice(product);
+            if(CoinSlot.Value >= price)
             {
                 Inventory.Dispense(product);
+                TemporaryDisplay = "THANK YOU";
             }
         }
 

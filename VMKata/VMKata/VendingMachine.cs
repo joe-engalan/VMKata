@@ -8,6 +8,7 @@ namespace VMKata
 {
     public class VendingMachine
     {
+
         #region Constructor
         public VendingMachine()
         {
@@ -19,6 +20,13 @@ namespace VMKata
         #region Properties
         public CoinCollection CoinSlot { get; private set; }
         public CoinCollection CoinReturn { get; private set; }
+        public string Display 
+        { 
+            get
+            {
+                return "INSERT COINS";
+            }
+        }
 
         #endregion
 

@@ -45,5 +45,11 @@ namespace VMKata
             vm.Insert(Coin.Penny, 1);
             Assert.AreEqual(1, vm.CoinReturn.Pennies);
         }
+
+        [Test]
+        public void AcceptCoins_DisplayMessageWhenCoinSlotIsEmpty_INSERTCOINSIsDisplayed()
+        {
+            Assert.AreEqual("INSERT COINS", vm.Display);
+        }
     }
 }

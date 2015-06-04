@@ -53,6 +53,10 @@ namespace VMKata
             {
                 price = 50;
             }
+            else if(product == Product.Candy)
+            {
+                price = 65;
+            }
 
             return price;
         }
